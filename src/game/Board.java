@@ -48,7 +48,13 @@ public class Board {
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (fields[i][j] != null) {
-                    boardString.append(" ").append(fields[i][j].getIndicatorChar()).append(" ");
+                    String pawnColor;
+                    if (fields[i][j].isWhite()) {
+                        pawnColor = Colors.ANSI_BLUE;
+                    } else {
+                        pawnColor = Colors.ANSI_RED;
+                    }
+                    boardString.append(" ").append(pawnColor).append(fields[i][j].getIndicatorChar()).append(Colors.ANSI_WHITE).append(" ");
                 } else {
                     boardString.append(" # ");
                 }
