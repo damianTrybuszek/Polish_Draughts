@@ -13,7 +13,11 @@ public class Board {
     }
 
     protected void boardInit() {
-        //whites
+        initWhitePawns();
+        initBlackPawns();
+    }
+
+    private void initWhitePawns() {
         for (int i = 0; i < BOARD_SIZE / 2 - 1; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (i % 2 == 0) {
@@ -27,7 +31,9 @@ public class Board {
                 }
             }
         }
-        //blacks
+    }
+
+    private void initBlackPawns() {
         for (int i = BOARD_SIZE - 1; i > BOARD_SIZE / 2; i--) {
             for (int j = BOARD_SIZE - 1; j >= 0; j--) {
                 if (i % 2 == 0) {
