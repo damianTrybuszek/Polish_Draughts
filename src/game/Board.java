@@ -70,7 +70,7 @@ public class Board {
         return boardString.toString();
     }
 
-    public int getBOARD_SIZE() {
+    public int getBoard_Size() {
         return BOARD_SIZE;
     }
 
