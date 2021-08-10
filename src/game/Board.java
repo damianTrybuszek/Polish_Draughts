@@ -71,12 +71,12 @@ public class Board {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (FIELDS[i][j] != null) {
                     String pawnColor;
-                    if (FIELDS[i][j].isWhite()) {
+                    if (FIELDS[i][j].isIS_WHITE()) {
                         pawnColor = Colors.BLUE;
                     } else {
                         pawnColor = Colors.RED;
                     }
-                    boardString.append(" ").append(pawnColor).append(FIELDS[i][j].getSymbolChar()).append(Colors.WHITE).append(" ");
+                    boardString.append(" ").append(pawnColor).append(FIELDS[i][j].getSYMBOL_CHAR()).append(Colors.WHITE).append(" ");
                 } else {
                     boardString.append(" # ");
                 }

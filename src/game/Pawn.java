@@ -1,33 +1,33 @@
 package game;
 
 public class Pawn {
-    private final boolean isWhite;
-    private final char symbolChar;
-    private final boolean isQueen;
+    private final boolean IS_WHITE;
+    private final char SYMBOL_CHAR;
+    private final boolean IS_QUEEN;
 //    private final int [][] coordinates;
 
     public Pawn(boolean isWhite, boolean isQueen/*, int[][] coordinates*/) {
-        this.isWhite = isWhite;
+        this.IS_WHITE = isWhite;
 
         if (isWhite) {
-            this.symbolChar = 'W';
+            this.SYMBOL_CHAR = 'W';
         } else {
-            this.symbolChar = 'B';
+            this.SYMBOL_CHAR = 'B';
         }
-        this.isQueen = isQueen;
+        this.IS_QUEEN = isQueen;
 //        this.coordinates = coordinates;
     }
 
-    public boolean isWhite() {
-        return isWhite;
+    public boolean isIS_WHITE() {
+        return IS_WHITE;
     }
 
-    public char getSymbolChar() {
-        return symbolChar;
+    public char getSYMBOL_CHAR() {
+        return SYMBOL_CHAR;
     }
 
-    public boolean isQueen() {
-        return isQueen;
+    public boolean isIS_QUEEN() {
+        return IS_QUEEN;
     }
 
 //    public int[][] getCoordinates() {
