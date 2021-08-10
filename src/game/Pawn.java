@@ -2,7 +2,7 @@ package game;
 
 public class Pawn {
     private final boolean isWhite;
-    private final char indicatorChar;
+    private final char symbolChar;
     private final boolean isQueen;
 //    private final int [][] coordinates;
 
@@ -10,9 +10,9 @@ public class Pawn {
         this.isWhite = isWhite;
 
         if (isWhite) {
-            this.indicatorChar = 'W';
+            this.symbolChar = 'W';
         } else {
-            this.indicatorChar = 'B';
+            this.symbolChar = 'B';
         }
         this.isQueen = isQueen;
 //        this.coordinates = coordinates;
@@ -22,8 +22,8 @@ public class Pawn {
         return isWhite;
     }
 
-    public char getIndicatorChar() {
-        return indicatorChar;
+    public char getSymbolChar() {
+        return symbolChar;
     }
 
     public boolean isQueen() {

@@ -1,5 +1,8 @@
 package game;
 
+import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Board {
     private final int BOARD_SIZE;
     private final int PLAYER_STARTING_PAWNS_NUMBER;
@@ -10,6 +13,17 @@ public class Board {
         this.PLAYER_STARTING_PAWNS_NUMBER = size * 2;
         this.fields = new Pawn[size][size];
         this.boardInit();
+    }
+
+    public static int getBoardSize() {
+        Scanner scanner = new Scanner(System.in);
+        AtomicInteger boardSize = new AtomicInteger(-1);
+        do {
+            //todo: clear console here
+            UI.printStatement("Please provide a board size from 10 to 20");
+            boardSize.set(scanner.nextInt());
+        } while (boardSize.get() < 10 || boardSize.get() > 20);
+        return boardSize.get();
     }
 
     protected void boardInit() {
@@ -56,11 +70,11 @@ public class Board {
                 if (fields[i][j] != null) {
                     String pawnColor;
                     if (fields[i][j].isWhite()) {
-                        pawnColor = Colors.ANSI_BLUE;
+                        pawnColor = Colors.BLUE;
                     } else {
-                        pawnColor = Colors.ANSI_RED;
+                        pawnColor = Colors.RED;
                     }
-                    boardString.append(" ").append(pawnColor).append(fields[i][j].getIndicatorChar()).append(Colors.ANSI_WHITE).append(" ");
+                    boardString.append(" ").append(pawnColor).append(fields[i][j].getSymbolChar()).append(Colors.WHITE).append(" ");
                 } else {
                     boardString.append(" # ");
                 }
