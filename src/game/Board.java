@@ -4,14 +4,16 @@ import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Board {
+    private final static int MINIMUM_BOARD_SIZE = 10;
+    private final static int MAXIMUM_BOARD_SIZE = 20;
     private final int BOARD_SIZE;
     private final int PLAYER_STARTING_PAWNS_NUMBER;
-    private final Pawn[][] fields;//final?
+    private final Pawn[][] FIELDS;//final?
 
     public Board(int size) {
         this.BOARD_SIZE = size;
         this.PLAYER_STARTING_PAWNS_NUMBER = size * 2;
-        this.fields = new Pawn[size][size];
+        this.FIELDS = new Pawn[size][size];
         this.boardInit();
     }
 
@@ -22,7 +24,7 @@ public class Board {
             //todo: clear console here
             UI.printStatement("Please provide a board size from 10 to 20");
             boardSize.set(scanner.nextInt());
-        } while (boardSize.get() < 10 || boardSize.get() > 20);
+        } while (boardSize.get() < MINIMUM_BOARD_SIZE || boardSize.get() > MAXIMUM_BOARD_SIZE);
         return boardSize.get();
     }
 
@@ -36,11 +38,11 @@ public class Board {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (i % 2 == 0) {
                     if (j % 2 == 0) {
-                        fields[i][j] = new Pawn(true, false);
+                        FIELDS[i][j] = new Pawn(true, false);
                     }
                 } else {
                     if (j % 2 == 1) {
-                        fields[i][j] = new Pawn(true, false);
+                        FIELDS[i][j] = new Pawn(true, false);
                     }
                 }
             }
@@ -52,11 +54,11 @@ public class Board {
             for (int j = BOARD_SIZE - 1; j >= 0; j--) {
                 if (i % 2 == 0) {
                     if (j % 2 == 0) {
-                        fields[i][j] = new Pawn(false, false);
+                        FIELDS[i][j] = new Pawn(false, false);
                     }
                 } else {
                     if (j % 2 == 1) {
-                        fields[i][j] = new Pawn(false, false);
+                        FIELDS[i][j] = new Pawn(false, false);
                     }
                 }
             }
@@ -67,14 +69,14 @@ public class Board {
         StringBuilder boardString = new StringBuilder();
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
-                if (fields[i][j] != null) {
+                if (FIELDS[i][j] != null) {
                     String pawnColor;
-                    if (fields[i][j].isWhite()) {
+                    if (FIELDS[i][j].isWhite()) {
                         pawnColor = Colors.BLUE;
                     } else {
                         pawnColor = Colors.RED;
                     }
-                    boardString.append(" ").append(pawnColor).append(fields[i][j].getSymbolChar()).append(Colors.WHITE).append(" ");
+                    boardString.append(" ").append(pawnColor).append(FIELDS[i][j].getSymbolChar()).append(Colors.WHITE).append(" ");
                 } else {
                     boardString.append(" # ");
                 }
@@ -93,7 +95,7 @@ public class Board {
     }
 
     public Pawn[][] getFields() {
-        return fields;
+        return FIELDS;
     }
 
     public void removePawn() {
