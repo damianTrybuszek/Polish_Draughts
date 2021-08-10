@@ -3,7 +3,6 @@ package game;
 //import static game.UI.getBoardSize;
 
 import static game.Colors.*;
-
 public class Main {
     public static void main(String[] args) {
 //        int boardSize = getBoardSize();
@@ -17,6 +16,9 @@ public class Main {
         Player player2 = new Player(player2Name, false,/*, 'B'*/board.getPlayerPawnsNumber());
 
         System.out.println(board);
+
+        //● ◌ ☼ ᴑ ۝ ۞ ֎ ҉ ҈ ѻ
+
 
 //        System.out.println("\t\t***Regular Colors***");
 //        System.out.println(BLACK + "test ANSI_RESET");
