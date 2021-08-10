@@ -38,27 +38,46 @@ public class Main {
         System.out.println(CYAN_BOLD + "test ANSI_CYAN_BACKGROUND");
         System.out.println(WHITE_BOLD + "test ANSI_WHITE_BACKGROUND");
 
-
-        System.out.println();
-        System.out.print(RED + WHITE_BACKGROUND + " ");
-        System.out.print(RED + BLACK_BACKGROUND + "●");
-        System.out.print(RED + WHITE_BACKGROUND + " ");
-        System.out.print(RED + BLACK_BACKGROUND + "●");
-        System.out.print(RED + WHITE_BACKGROUND + " ");
-        System.out.print(RED + BLACK_BACKGROUND + " ");
-        System.out.print(RED + WHITE_BACKGROUND + " ");
-        System.out.print(RED + BLACK_BACKGROUND + "●");
-        System.out.print(RED + WHITE_BACKGROUND + " ");
         System.out.println(Colors.RESET);
-        System.out.print(CYAN + BLACK_BACKGROUND + "●");
-        System.out.print(CYAN + WHITE_BACKGROUND + " ");
-        System.out.print(CYAN + BLACK_BACKGROUND + " ");
-        System.out.print(CYAN + WHITE_BACKGROUND + " ");
-        System.out.print(CYAN + BLACK_BACKGROUND + "●");
-        System.out.print(CYAN + WHITE_BACKGROUND + " ");
-        System.out.print(CYAN + BLACK_BACKGROUND + "●");
-        System.out.print(CYAN + WHITE_BACKGROUND + " ");
-        System.out.print(CYAN + BLACK_BACKGROUND + " ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.println(Colors.RESET);
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + " ● ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + " ● ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + "   ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + " ● ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.println(Colors.RESET);
+        System.out.print(CYAN + BLACK_BACKGROUND + " ● ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + " ● ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + " ● ");
+        System.out.print(CYAN + WHITE_BACKGROUND + "   ");
+        System.out.print(CYAN + BLACK_BACKGROUND + "   ");
+        System.out.println(Colors.RESET);
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + "   ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + "   ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + "   ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
+        System.out.print(RED + BLACK_BACKGROUND + "   ");
+        System.out.print(RED + WHITE_BACKGROUND + "   ");
 
     }
 }
