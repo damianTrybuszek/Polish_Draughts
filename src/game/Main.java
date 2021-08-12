@@ -4,26 +4,22 @@ package game;
 import static game.Colors.*;
 public class Main {
     public static void main(String[] args) {
-
         game.start();
         String player1Name = game.player1Name;
         String player2Name = game.player2Name;
-
-
-        int boardSize = Board.getBoardSize();
+        int boardSize = game.boardSize;
 //        int boardSize = 10;
+
+
         Board board = new Board(boardSize);
 
         Player player1 = new Player(player1Name, true,/*, 'W'*/board.getPlayerPawnsNumber());
         Player player2 = new Player(player2Name, false,/*, 'B'*/board.getPlayerPawnsNumber());
 
+
         System.out.println(board);
-
-
-        String player = game.player1Name;
-        String playertwo = game.player2Name;
-        System.out.println(player);
-        System.out.println(playertwo);
+        System.out.println(player1Name);
+        System.out.println(player2Name);
         //● ◌ ☼ ᴑ ۝ ۞ ֎ ҉ ҈ ѻ
 
 
@@ -87,6 +83,5 @@ public class Main {
         System.out.print(RED + WHITE_BACKGROUND + "   ");
         System.out.print(RED + BLACK_BACKGROUND + "   ");
         System.out.print(RED + WHITE_BACKGROUND + "   ");
-
     }
 }
