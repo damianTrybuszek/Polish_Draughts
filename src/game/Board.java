@@ -68,12 +68,16 @@ public class Board {
     }
 
     public String toString() {
-        //todo: print board with J coordinates
         StringBuilder boardString = new StringBuilder();
-        printBoardICoordinates(boardString);
+        printBoardJCoordinates(boardString);
         String fieldColor;
-        for (int i = 0; i < BOARD_SIZE; i++) { //board row
-            for (int j = 0; j < BOARD_SIZE; j++) { //board column
+        for (int i = 0; i < BOARD_SIZE; i++) { //board column
+            if (i < 9) {
+                boardString.append(' ').append(i + 1).append(' ');
+            } else {
+                boardString.append(i + 1).append(' ');
+            }
+            for (int j = 0; j < BOARD_SIZE; j++) { //board row
                 if ((j + i) % 2 == 0) {
                     fieldColor = BLACK_BACKGROUND;
                 } else {
@@ -100,12 +104,13 @@ public class Board {
         }
     }
 
-    private void printBoardICoordinates(StringBuilder boardString) {
-        for (int i = 1; i < BOARD_SIZE + 1; i++) {
-            if (i < 10) {
-                boardString.append(' ').append(i).append(' ');
+    private void printBoardJCoordinates(StringBuilder boardString) {
+        boardString.append("   ");
+        for (int j = 1; j < BOARD_SIZE + 1; j++) {
+            if (j < 10) {
+                boardString.append(' ').append(j).append(' ');
             } else {
-                boardString.append(' ').append(i);
+                boardString.append(' ').append(j);
             }
         }
         boardString.append("\n");
