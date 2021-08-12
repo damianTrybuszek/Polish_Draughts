@@ -3,6 +3,8 @@ package game;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static game.Colors.*;
+
 public class Board {
     private final static int MINIMUM_BOARD_SIZE = 10;
     private final static int MAXIMUM_BOARD_SIZE = 20;
@@ -67,8 +69,14 @@ public class Board {
 
     public String toString() {
         StringBuilder boardString = new StringBuilder();
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; j < BOARD_SIZE; j++) {
+        String fieldColor;
+        for (int i = 0; i < BOARD_SIZE; i++) { //board row
+            for (int j = 0; j < BOARD_SIZE; j++) { //board column
+                if ((j + i) % 2 == 0) {
+                    fieldColor = BLACK_BACKGROUND;
+                } else {
+                    fieldColor = WHITE_BACKGROUND;
+                }
                 if (FIELDS[i][j] != null) {
                     String pawnColor;
                     if (FIELDS[i][j].isIS_WHITE()) {
@@ -76,9 +84,9 @@ public class Board {
                     } else {
                         pawnColor = Colors.RED;
                     }
-                    boardString.append(" ").append(pawnColor).append(FIELDS[i][j].getSYMBOL_CHAR()).append(Colors.WHITE).append(" ");
+                    boardString.append(fieldColor).append(" ").append(pawnColor + fieldColor).append(FIELDS[i][j].getPawnSymbol()).append(fieldColor).append(" ").append(RESET);
                 } else {
-                    boardString.append(" # ");
+                    boardString.append(fieldColor).append("   ").append(Colors.RESET);
                 }
             }
             boardString.append("\n");
