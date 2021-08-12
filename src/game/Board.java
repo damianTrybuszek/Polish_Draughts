@@ -26,7 +26,7 @@ public class Board {
         return boardSize.get();
     }
 
-    protected void boardInit() {
+        protected void boardInit() {
         initWhitePawns();
         initBlackPawns();
     }
@@ -65,7 +65,15 @@ public class Board {
 
     public String toString() {
         StringBuilder boardString = new StringBuilder();
+        boardString.append("   ");
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
+        for (int i=0; i<BOARD_SIZE; i++){
+            boardString.append(alphabet[i]).append("  ");
+        }
+        boardString.append("\n");
         for (int i = 0; i < BOARD_SIZE; i++) {
+            boardString.append(i+1);
+            if (i < 9) { boardString.append(" "); }
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (fields[i][j] != null) {
                     String pawnColor;

@@ -2,10 +2,9 @@ package game;
 
 //import static game.UI.getBoardSize;
 
-import static game.Colors.*;
 public class Main {
     public static void main(String[] args) {
-//        int boardSize = getBoardSize();
+//        int boardSize = Board.getBoardSize();
         int boardSize = 10;
         Board board = new Board(boardSize);
 
