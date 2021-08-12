@@ -20,7 +20,7 @@ public class Board {
         AtomicInteger boardSize = new AtomicInteger(-1);
         do {
             //todo: clear console here
-            UI.printStatement("Please provide a board size from 10 to 20");
+            UI.printAnotherStatement("Please provide a board size from 10 to 20");
             boardSize.set(scanner.nextInt());
         } while (boardSize.get() < 10 || boardSize.get() > 20);
         return boardSize.get();

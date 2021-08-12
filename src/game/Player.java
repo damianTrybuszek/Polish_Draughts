@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import static game.UI.checkIfString;
+
 public class Player {
     private final String name;
     private final boolean isWhite;
@@ -28,11 +30,19 @@ public class Player {
 //        return this.playerPawnSymbol;
 //    }
 
-    public static String getPlayerName() {
+    public static String getPlayerName(String stringPlayerNumber) {
         Scanner scanner = new Scanner(System.in);
-        //todo validate input, welcome players
-        System.out.println("Please provide a player name:");
-        return scanner.nextLine();
+        int offset = 17;
+        String originalStatement = "Please provide a player name: ";
+        StringBuilder builder = new StringBuilder(originalStatement);
+        builder.insert(offset, stringPlayerNumber);
+        String statement = builder.toString();
+        String playerName;
+        do {
+            UI.printAnotherStatement(statement);
+            playerName = scanner.nextLine();
+        } while (checkIfString(playerName));
+        return playerName;
     }
 
     public int getPawnsLeft() {
