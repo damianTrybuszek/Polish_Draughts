@@ -16,7 +16,7 @@ public class Board {
         this.BOARD_SIZE = size;
         this.PLAYER_STARTING_PAWNS_NUMBER = size * 2;
         this.FIELDS = new Pawn[size][size];
-        this.boardInit();
+        this.initPawns();
     }
 
     public static int getBoardSize() {
@@ -30,7 +30,7 @@ public class Board {
         return boardSize.get();
     }
 
-    protected void boardInit() {
+    protected void initPawns() {
         initWhitePawns();
         initBlackPawns();
     }
@@ -40,11 +40,11 @@ public class Board {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (i % 2 == 0) {
                     if (j % 2 == 0) {
-                        FIELDS[i][j] = new Pawn(true, false);
+                        FIELDS[i][j] = new Pawn(true, false, i, j);
                     }
                 } else {
                     if (j % 2 == 1) {
-                        FIELDS[i][j] = new Pawn(true, false);
+                        FIELDS[i][j] = new Pawn(true, false, i, j);
                     }
                 }
             }
@@ -56,11 +56,11 @@ public class Board {
             for (int j = BOARD_SIZE - 1; j >= 0; j--) {
                 if (i % 2 == 0) {
                     if (j % 2 == 0) {
-                        FIELDS[i][j] = new Pawn(false, false);
+                        FIELDS[i][j] = new Pawn(false, false, i, j);
                     }
                 } else {
                     if (j % 2 == 1) {
-                        FIELDS[i][j] = new Pawn(false, false);
+                        FIELDS[i][j] = new Pawn(false, false, i, j);
                     }
                 }
             }
@@ -69,29 +69,51 @@ public class Board {
 
     public String toString() {
         StringBuilder boardString = new StringBuilder();
+        printBoardJCoordinates(boardString);
         String fieldColor;
-        for (int i = 0; i < BOARD_SIZE; i++) { //board row
-            for (int j = 0; j < BOARD_SIZE; j++) { //board column
+        for (int i = 0; i < BOARD_SIZE; i++) { //board column
+            if (i < 9) {
+                boardString.append(' ').append(i + 1).append(' ');
+            } else {
+                boardString.append(i + 1).append(' ');
+            }
+            for (int j = 0; j < BOARD_SIZE; j++) { //board row
                 if ((j + i) % 2 == 0) {
                     fieldColor = BLACK_BACKGROUND;
                 } else {
                     fieldColor = WHITE_BACKGROUND;
                 }
-                if (FIELDS[i][j] != null) {
-                    String pawnColor;
-                    if (FIELDS[i][j].isIS_WHITE()) {
-                        pawnColor = Colors.BLUE;
-                    } else {
-                        pawnColor = Colors.RED;
-                    }
-                    boardString.append(fieldColor).append(" ").append(pawnColor + fieldColor).append(FIELDS[i][j].getPawnSymbol()).append(fieldColor).append(" ").append(RESET);
-                } else {
-                    boardString.append(fieldColor).append("   ").append(Colors.RESET);
-                }
+                printField(boardString, fieldColor, i, j);
             }
             boardString.append("\n");
         }
         return boardString.toString();
+    }
+
+    private void printField(StringBuilder boardString, String fieldColor, int i, int j) {
+        if (FIELDS[i][j] != null) {
+            String pawnColor;
+            if (FIELDS[i][j].isIS_WHITE()) {
+                pawnColor = Colors.BLUE;
+            } else {
+                pawnColor = Colors.RED;
+            }
+            boardString.append(fieldColor).append(" ").append(pawnColor + fieldColor).append(FIELDS[i][j].getPawnSymbol()).append(fieldColor).append(" ").append(RESET);
+        } else {
+            boardString.append(fieldColor).append("   ").append(Colors.RESET);
+        }
+    }
+
+    private void printBoardJCoordinates(StringBuilder boardString) {
+        boardString.append("   ");
+        for (int j = 1; j < BOARD_SIZE + 1; j++) {
+            if (j < 10) {
+                boardString.append(' ').append(j).append(' ');
+            } else {
+                boardString.append(' ').append(j);
+            }
+        }
+        boardString.append("\n");
     }
 
     public int getBoard_Size() {

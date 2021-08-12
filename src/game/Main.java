@@ -5,16 +5,18 @@ package game;
 public class Main {
     public static void main(String[] args) {
 //        int boardSize = getBoardSize();
-        int boardSize = 10;
+        int boardSize = 20;
         Board board = new Board(boardSize);
 
         String player1Name = "Tom"; //Player.getPlayerName();
         String player2Name = "Jerry"; //Player.getPlayerName();
 
-        Player player1 = new Player(player1Name, true,/*, 'W'*/board.getPlayerPawnsNumber());
-        Player player2 = new Player(player2Name, false,/*, 'B'*/board.getPlayerPawnsNumber());
+        Player player1 = new Player(player1Name, true, board.getPlayerPawnsNumber());
+        Player player2 = new Player(player2Name, false, board.getPlayerPawnsNumber());
 
         System.out.println(board);
-
+        if (board.getFields()[2][0] != null) {
+            System.out.println(board.getFields()[2][0].getCoordinates());
+        }
     }
 }

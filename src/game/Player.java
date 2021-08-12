@@ -5,14 +5,12 @@ import java.util.Scanner;
 public class Player {
     private final String NAME;
     private final boolean IS_WHITE;
-    //    private final char playerPawnSymbol;
     private final int pawnsLeft;
 
 
-    public Player(String name, boolean isWhite,/*, char indicatorChar*/int pawnsLeft) {
+    public Player(String name, boolean isWhite, int pawnsLeft) {
         this.NAME = name;
         this.IS_WHITE = isWhite;
-//        this.playerPawnSymbol = indicatorChar;
         this.pawnsLeft = pawnsLeft;
     }
 
@@ -23,10 +21,6 @@ public class Player {
     public boolean isIsWhite() {
         return this.IS_WHITE;
     }
-
-//    public char getPlayerPawnSymbol() {
-//        return this.playerPawnSymbol;
-//    }
 
     public static String getPlayerName() {
         Scanner scanner = new Scanner(System.in);
