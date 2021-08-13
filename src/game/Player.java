@@ -26,11 +26,7 @@ public class Player {
 
     public static String getPlayerName(String stringPlayerNumber) {
         Scanner scanner = new Scanner(System.in);
-        int offset = 17;
-        String originalStatement = "Please provide a player name: ";
-        StringBuilder builder = new StringBuilder(originalStatement);
-        builder.insert(offset, stringPlayerNumber);
-        String statement = builder.toString();
+        String statement = UI.stringBuilder("Please provide a player name: ", stringPlayerNumber, 17);
         String playerName;
         do {
             UI.printAnotherStatement(statement);

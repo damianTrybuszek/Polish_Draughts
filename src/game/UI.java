@@ -35,4 +35,9 @@ public class UI {
         System.out.flush();
     }
 
+    public static String stringBuilder(String stringToChange, String stringToInsert, int offset) {
+        StringBuilder statement = new StringBuilder(stringToChange);
+        statement.insert(offset, stringToInsert);
+        return statement.toString();
+    }
 }

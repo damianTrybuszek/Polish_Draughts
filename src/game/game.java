@@ -10,7 +10,9 @@ public class game {
         UI.printStatement("Welcome in the Polish draughts!");
         player1Name = Player.getPlayerName("first ");
         player2Name = Player.getPlayerName("second ");
+        String startStatement = UI.stringBuilder("You start, . Your pawns are white!", player1Name, 11);
         boardSize = Board.getBoardSize();
+        UI.printStatement(startStatement);
     }
 
     public static void playRound(){
