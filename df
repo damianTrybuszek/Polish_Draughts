@@ -1,0 +1,98 @@
+[33mcommit d7468826b4ad0bb0cbbd5c7f5b7d6a16d1f1d41b[m[33m ([m[1;36mHEAD -> [m[1;32mDymitr[m[33m, [m[1;31morigin/Dymitr[m[33m)[m
+Author: DDubicki <dubickidymitr@gmail.com>
+Date:   Thu Aug 12 18:39:02 2021 +0200
+
+    Get board size in start method
+
+[33mcommit da9d16443aae97c226a6c136d74b6926be21f5b7[m
+Author: DDubicki <dubickidymitr@gmail.com>
+Date:   Thu Aug 12 17:48:22 2021 +0200
+
+    Get players names with input validation
+
+[33mcommit 1a9d11ded0524af16b0cfa6bf6aa3b0e97b1a570[m
+Author: DDubicki <dubickidymitr@gmail.com>
+Date:   Thu Aug 12 14:53:17 2021 +0200
+
+    Get board size fixed, board modified with rows and columns names
+
+[33mcommit 5934597aaa4005ed4440e0c2dec6983632df9baf[m
+Author: DDubicki <dubickidymitr@gmail.com>
+Date:   Thu Aug 12 14:50:09 2021 +0200
+
+    Get board size fixed, board modified with rows and columns names
+
+[33mcommit ef7697557e2b4af42531c181c752be9ac809a21e[m
+Merge: 77fa9bc 0bbade3
+Author: DDubicki <dubickidymitr@gmail.com>
+Date:   Tue Aug 10 16:38:31 2021 +0200
+
+    After Michal merging
+
+[33mcommit 0bbade3ee830e19c9bc164e1170621a4532da8f3[m[33m ([m[1;31morigin/Michal[m[33m, [m[1;32mMichal[m[33m)[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Tue Aug 10 13:03:45 2021 +0200
+
+    nice board view v3
+
+[33mcommit 509df758d8be1fa3406a299831de1085afa052b6[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Tue Aug 10 12:16:06 2021 +0200
+
+    nice board view v2
+
+[33mcommit 457ae88bbae072947d603c2e73a7015da3bf69de[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Tue Aug 10 12:12:43 2021 +0200
+
+    nice board view
+
+[33mcommit 2cf5540f51df25ab97e1ec9d212fce5e3931c3c9[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Tue Aug 10 12:08:43 2021 +0200
+
+    color test
+
+[33mcommit 77fa9bc44db8b2f19acc364af6036c84a3b2f4e8[m
+Author: DDubicki <dubickidymitr@gmail.com>
+Date:   Mon Aug 9 13:45:18 2021 +0200
+
+    Init project
+
+[33mcommit d1c227704916c3dc38295e68ee078e2187e2558f[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Sun Aug 8 21:20:41 2021 +0200
+
+    beginning with board size choosing
+
+[33mcommit 509314f0a42228e1d662bde1f44e5429e9f001e5[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Sun Aug 8 21:17:10 2021 +0200
+
+    simple code refactoring
+
+[33mcommit 1913123bb76f29f8846342b88c24e4c95ee378f5[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Sun Aug 8 21:12:12 2021 +0200
+
+    simple colors
+
+[33mcommit 4f2a8243a7875517dde7d283b1f7966499ec7b73[m
+Author: Michał Gawroński <79256098+gmichalcode@users.noreply.github.com>
+Date:   Sun Aug 8 21:07:56 2021 +0200
+
+    basics
+
+[33mcommit 6cfba4cde1d5ade11b236dc672fa5db9558ffd22[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Michał Gawroński <79256098+GMichalCode@users.noreply.github.com>
+Date:   Sun Aug 8 17:03:59 2021 +0200
+
+    init
+    
+    Signed-off-by: Michał Gawroński <79256098+GMichalCode@users.noreply.github.com>
+
+[33mcommit eb958ed6ea9905cd59b618099fda7d181845be6d[m[33m ([m[1;31morigin/Beniamin[m[33m, [m[1;32mmain[m[33m)[m
+Author: Damian <79227350+damianTrybuszek@users.noreply.github.com>
+Date:   Sun Aug 8 16:25:36 2021 +0200
+
+    Initial commit
