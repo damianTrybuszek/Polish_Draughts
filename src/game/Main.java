@@ -16,10 +16,17 @@ public class Main {
         Player player1 = new Player(player1Name, true, board.getPlayerPawnsNumber());
         Player player2 = new Player(player2Name, false, board.getPlayerPawnsNumber());
 
+        System.out.println(player1);
 
         System.out.println(board);
         if (board.getFields()[2][0] != null) {
             System.out.println(board.getFields()[2][0].getCoordinates());
         }
+
+//        int correctMoveCounter = 0;
+//        do {
+//            game.playRound(correctMoveCounter);
+//            correctMoveCounter++;
+//        } while (correctMoveCounter < 10);
     }
 }

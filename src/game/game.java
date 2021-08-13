@@ -4,6 +4,7 @@ public class game {
     static String player1Name;
     static String player2Name;
     static int boardSize;
+    static String winnerName;
 
     public static void start(){
         // TODO clear console
@@ -15,7 +16,17 @@ public class game {
         UI.printStatement(startStatement);
     }
 
-    public static void playRound(){
+    public static String playRound(int correctMoveCounter){
+        String nextMovePlayer = player1Name;
+        if (correctMoveCounter % 2 == 1){
+            nextMovePlayer = player2Name;
+        }
+        if (winnerName.isBlank()){
+            UI.printStatement("Your move " + nextMovePlayer);
+            return nextMovePlayer;
+        } else {
+            return winnerName;
+        }
     }
 
     public static void tryToMakeMove(){
