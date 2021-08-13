@@ -5,30 +5,24 @@ import java.util.Scanner;
 import static game.UI.checkIfString;
 
 public class Player {
-    private final String name;
-    private final boolean isWhite;
-    //    private final char playerPawnSymbol;
+    private final String NAME;
+    private final boolean IS_WHITE;
     private final int pawnsLeft;
 
 
-    public Player(String name, boolean isWhite,/*, char indicatorChar*/int pawnsLeft) {
-        this.name = name;
-        this.isWhite = isWhite;
-//        this.playerPawnSymbol = indicatorChar;
+    public Player(String name, boolean isWhite, int pawnsLeft) {
+        this.NAME = name;
+        this.IS_WHITE = isWhite;
         this.pawnsLeft = pawnsLeft;
     }
 
-    public String getName() {
-        return this.name;
+    public String getNAME() {
+        return this.NAME;
     }
 
     public boolean isIsWhite() {
-        return this.isWhite;
+        return this.IS_WHITE;
     }
-
-//    public char getPlayerPawnSymbol() {
-//        return this.playerPawnSymbol;
-//    }
 
     public static String getPlayerName(String stringPlayerNumber) {
         Scanner scanner = new Scanner(System.in);

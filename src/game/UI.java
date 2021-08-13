@@ -23,7 +23,7 @@ public class UI {
     }
 
     public static void clearConsoleScreen() {
-//        TODO this is method! Doesn't works
+//        TODO this method! It doesn't works
 //        try {
 //            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 //        }

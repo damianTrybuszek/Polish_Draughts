@@ -1,36 +1,36 @@
 package game;
 
+import java.util.HashMap;
+
 public class Pawn {
-    private final boolean isWhite;
-    private final char symbolChar;
-    private final boolean isQueen;
-//    private final int [][] coordinates;
+    private final boolean IS_WHITE;
+    private final boolean IS_QUEEN;
+    private int coordinateI = -1;
+    private int coordinateJ = -1;
 
-    public Pawn(boolean isWhite, boolean isQueen/*, int[][] coordinates*/) {
-        this.isWhite = isWhite;
-
-        if (isWhite) {
-            this.symbolChar = 'W';
-        } else {
-            this.symbolChar = 'B';
-        }
-        this.isQueen = isQueen;
-//        this.coordinates = coordinates;
+    public Pawn(boolean isWhite, boolean isQueen, int coordinateI, int coordinateJ) {
+        this.IS_WHITE = isWhite;
+        this.IS_QUEEN = isQueen;
+        this.coordinateI = coordinateI;
+        this.coordinateJ = coordinateJ;
     }
 
-    public boolean isWhite() {
-        return isWhite;
+    public boolean isIS_WHITE() {
+        return IS_WHITE;
     }
 
-    public char getSymbolChar() {
-        return symbolChar;
+    public char getPawnSymbol() {
+        return '●';
     }
 
-    public boolean isQueen() {
-        return isQueen;
+    public boolean isIS_QUEEN() {
+        return IS_QUEEN;
     }
 
-//    public int[][] getCoordinates() {
-//        return coordinates;
-//    }
+    public HashMap<String, Integer> getCoordinates() {
+        HashMap<String, Integer> coordinates = new HashMap<>();
+        coordinates.put("coordinateI", this.coordinateI);
+        coordinates.put("coordinateJ", this.coordinateJ);
+        return coordinates;
+    }
 }
