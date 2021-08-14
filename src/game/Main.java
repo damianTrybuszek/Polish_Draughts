@@ -18,7 +18,6 @@ public class Main {
         Player player2 = new Player(player2Name, false, board.getPlayerPawnsNumber());
 
 
-//        while(TR):
         System.out.println(board);
         int correctMoveCounter = 0;
         Scanner scanner = new Scanner(System.in);
@@ -36,7 +35,8 @@ public class Main {
                 System.out.println("Provide a number of column that you want to move on: ");
                 int newCol = scanner.nextInt();
                 Boolean decisionToMove = Game.tryToMakeMove(board, newRow, newCol, false, actualMovePlayer);
-                if (decisionToMove){
+                Boolean ifNotToFar = Game.checkIfNotTooFar(row, col, newRow, newCol);
+                if (decisionToMove && ifNotToFar){
                     boolean isWhite = board.getFields()[row-1][col-1].IS_WHITE;
                     board.movePawn(row, col, newRow, newCol, isWhite);
                     correctMoveCounter++;

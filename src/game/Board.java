@@ -78,7 +78,7 @@ public class Board {
                 boardString.append(i + 1).append(' ');
             }
             for (int j = 0; j < BOARD_SIZE; j++) { //board row
-                if ((j + i) % 2 == 0) {
+                if ((j + i) % 2 == 0)  {
                     fieldColor = BLACK_BACKGROUND;
                 } else {
                     fieldColor = WHITE_BACKGROUND;
@@ -107,7 +107,7 @@ public class Board {
     private void printBoardJCoordinates(StringBuilder boardString) {
         boardString.append("   ");
         for (int j = 1; j < BOARD_SIZE + 1; j++) {
-            if (j < 10) {
+            if (j < 9) {
                 boardString.append(' ').append(j).append(' ');
             } else {
                 boardString.append(' ').append(j);
@@ -128,17 +128,29 @@ public class Board {
         return FIELDS;
     }
 
-    public void removePawn() {
+    public void removePawn(int row, int col) {
+        FIELDS[row-1][col-1] = null;
+
     }
 
     public void movePawn(int row, int col, int newRow, int newCol, boolean isWhite) {
+        removePawn(row, col);
+        int rowDiff = newRow - row;
+        int colDiff = newCol - col;
+        if(FIELDS[newRow-1][newCol-1] == null) {
+            if (isWhite) {
+                FIELDS[newRow - 1][newCol - 1] = new Pawn(true, false, newRow, newCol);
+            } else {
+                FIELDS[newRow - 1][newCol - 1] = new Pawn(false, false, newRow, newCol);
+            }}
+        else if((FIELDS[newRow-1][newCol-1]).IS_WHITE!= isWhite){
+            removePawn(newRow, newCol);
+            if (isWhite) {
+                FIELDS[newRow - 1 + rowDiff][newCol - 1 + colDiff] = new Pawn(true, false, newRow, newCol);
+            } else {
+                FIELDS[newRow - 1 + rowDiff][newCol - 1 + colDiff] = new Pawn(false, false, newRow, newCol);
+            }
 
-        FIELDS[row-1][col-1] = null;
-        if (isWhite){
-            FIELDS[newRow-1][newCol-1] = new Pawn(true, false, newRow, newCol);
-        }
-        else{
-        FIELDS[newRow-1][newCol-1] = new Pawn(false, false, newRow, newCol);
         }
 
     }
