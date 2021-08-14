@@ -9,25 +9,26 @@ public class Board {
     private final static int MINIMUM_BOARD_SIZE = 10;
     private final static int MAXIMUM_BOARD_SIZE = 20;
     private final int BOARD_SIZE;
-    private final int PLAYER_STARTING_PAWNS_NUMBER;
-    private final Pawn[][] FIELDS;//final?
 
-    public Board(int size) {
-        this.BOARD_SIZE = size;
-        this.PLAYER_STARTING_PAWNS_NUMBER = size * 2;
-        this.FIELDS = new Pawn[size][size];
+    private final int PLAYER_STARTING_PAWNS_NUMBER;
+    public Pawn[][] Fields;
+
+    public Board() {
+        this.BOARD_SIZE = getBoardSize();
+        this.PLAYER_STARTING_PAWNS_NUMBER = BOARD_SIZE * 2;
+        this.Fields = new Pawn[BOARD_SIZE][BOARD_SIZE];
         this.initPawns();
+
     }
 
     public static int getBoardSize() {
         Scanner scanner = new Scanner(System.in);
         AtomicInteger boardSize = new AtomicInteger(-1);
         do {
-            //todo: clear console here
             UI.printStatement("Please provide a board size from 10 to 20");
             boardSize.set(scanner.nextInt());
         } while (boardSize.get() < MINIMUM_BOARD_SIZE || boardSize.get() > MAXIMUM_BOARD_SIZE);
-        return boardSize.get();
+    return boardSize.get();
     }
 
     protected void initPawns() {
@@ -40,11 +41,11 @@ public class Board {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (i % 2 == 0) {
                     if (j % 2 == 0) {
-                        FIELDS[i][j] = new Pawn(true, false, i, j);
+                        Fields[i][j] = new Pawn(true, false, i, j);
                     }
                 } else {
                     if (j % 2 == 1) {
-                        FIELDS[i][j] = new Pawn(true, false, i, j);
+                        Fields[i][j] = new Pawn(true, false, i, j);
                     }
                 }
             }
@@ -52,15 +53,15 @@ public class Board {
     }
 
     private void initBlackPawns() {
-        for (int i = BOARD_SIZE - 1; i > BOARD_SIZE / 2; i--) {
+        for (int i = BOARD_SIZE - 1; i > BOARD_SIZE/2 ; i--) {
             for (int j = BOARD_SIZE - 1; j >= 0; j--) {
                 if (i % 2 == 0) {
                     if (j % 2 == 0) {
-                        FIELDS[i][j] = new Pawn(false, false, i, j);
+                        Fields[i][j] = new Pawn(false, false, i, j);
                     }
                 } else {
                     if (j % 2 == 1) {
-                        FIELDS[i][j] = new Pawn(false, false, i, j);
+                        Fields[i][j] = new Pawn(false, false, i, j);
                     }
                 }
             }
@@ -91,14 +92,14 @@ public class Board {
     }
 
     private void printField(StringBuilder boardString, String fieldColor, int i, int j) {
-        if (FIELDS[i][j] != null) {
+        if (Fields[i][j] != null) {
             String pawnColor;
-            if (FIELDS[i][j].isIS_WHITE()) {
+            if (Fields[i][j].isIS_WHITE()) {
                 pawnColor = Colors.BLUE;
             } else {
                 pawnColor = Colors.RED;
             }
-            boardString.append(fieldColor).append(" ").append(pawnColor + fieldColor).append(FIELDS[i][j].getPawnSymbol()).append(fieldColor).append(" ").append(RESET);
+            boardString.append(fieldColor).append(" ").append(pawnColor + fieldColor).append(Fields[i][j].getPawnSymbol()).append(fieldColor).append(" ").append(RESET);
         } else {
             boardString.append(fieldColor).append("   ").append(Colors.RESET);
         }
@@ -116,22 +117,30 @@ public class Board {
         boardString.append("\n");
     }
 
-    public int getBoard_Size() {
-        return BOARD_SIZE;
-    }
-
     public int getPlayerPawnsNumber() {
         return PLAYER_STARTING_PAWNS_NUMBER;
     }
 
     public Pawn[][] getFields() {
-        return FIELDS;
+        return Fields;
     }
 
     public void removePawn() {
+
     }
 
-    public void movePawn() {
-    }
+//    public void movePawn() {
+//        Scanner scanner = new Scanner(System.in);
+//        int coordI = scanner.nextInt();
+//        int coordJ = scanner.nextInt();
+//        if (coordI <= BOARD_SIZE && coordJ <= BOARD_SIZE){
+//            if (Fields[coordI][coordJ])
+//
+//        }
+
+
+
+
+//    }
 
 }

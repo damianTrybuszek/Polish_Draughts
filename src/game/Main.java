@@ -4,9 +4,7 @@ package game;
 
 public class Main {
     public static void main(String[] args) {
-//        int boardSize = getBoardSize();
-        int boardSize = 20;
-        Board board = new Board(boardSize);
+        Board board = new Board();
 
         String player1Name = "Tom"; //Player.getPlayerName();
         String player2Name = "Jerry"; //Player.getPlayerName();
