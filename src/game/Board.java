@@ -131,7 +131,15 @@ public class Board {
     public void removePawn() {
     }
 
-    public void movePawn() {
-    }
+    public void movePawn(int row, int col, int newRow, int newCol, boolean isWhite) {
 
+        FIELDS[row-1][col-1] = null;
+        if (isWhite){
+            FIELDS[newRow-1][newCol-1] = new Pawn(true, false, newRow, newCol);
+        }
+        else{
+        FIELDS[newRow-1][newCol-1] = new Pawn(false, false, newRow, newCol);
+        }
+
+    }
 }
