@@ -30,7 +30,7 @@ public class Player {
         String playerName;
         do {
             UI.printAnotherStatement(statement);
-            playerName = scanner.nextLine();
+            playerName = scanner.nextLine().trim();
         } while (checkIfString(playerName));
         return playerName;
     }
