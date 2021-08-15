@@ -131,15 +131,39 @@ public class Game {
         return false;
     }
 
+    public static int[] getActualPawnCoordinates(Object board, int startCol, int enemyRow, int enemyCol, Boolean isWhite){
+        int[] coordinates = new int[2];
+        coordinates[0] = enemyRow;
+        coordinates[1] = enemyCol;
+        if (checkBoundaries(enemyRow) && checkBoundaries(enemyCol)) {
+            if (((Board) board).getFields()[enemyRow][enemyCol] != null) {
+                if (isWhite) {
+                    coordinates[0] = enemyRow + 1;
+                } else {
+                    coordinates[0] = enemyRow - 1;
+                }
+                if (enemyCol - startCol > 0) {
+                    coordinates[1] = enemyCol + 1;
+                } else {
+                    coordinates[1] = enemyCol - 1;
+                }
+            }
+        }
+        return coordinates;
+    }
 
-    public static Boolean checkIfMultiplyMoves(Object board, int row, int col, Boolean isWhite){
+
+    public static Boolean checkIfMultiplyMoves(Object board, int startCol, int enemyRow, int enemyCol, Boolean isWhite){
+        int row = getActualPawnCoordinates(board, startCol, enemyRow, enemyCol, isWhite)[0];
+        int col = getActualPawnCoordinates(board, startCol, enemyRow, enemyCol, isWhite)[1];
+
         // White move
         if (isWhite){
             // left down diagonal move
-            if (downMultiplyMoves(board, row, (col-2), (row+1), (col-3))){ return true; }
+            if (downMultiplyMoves(board, row, (col-2), (row+1), (col-3))) { return true; }
             // right down diagonal move
             if (downMultiplyMoves(board, row, col, (row+1), (col+1))) { return true; }
-            // next left and right down move is empty or own pawns
+            // left and right down diagonal move is empty or own pawns
             return false;
         }
 
@@ -149,7 +173,7 @@ public class Game {
             if (upMultiplyMoves(board, (row-2), (col-2), (row-3), (col-3))) { return true; }
             // right up diagonal move
             if (upMultiplyMoves(board, (row-2), col, (row-3), (col+1))) { return true; }
-            // next left and right up move is empty or own pawns
+            // left and right up diagonal move is empty or own pawns
             return false;
         }
     }

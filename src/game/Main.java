@@ -40,7 +40,7 @@ public class Main {
                     board.movePawn(row, col, newRow, newCol, isWhite);
                     System.out.println(board);
                     // while Game.checkIfMultiplyMoves(board, newRow, newCol, isWhite); { move }
-                    Game.checkIfMultiplyMoves(board, newRow, newCol, isWhite);
+                    Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite);
                     correctMoveCounter++;
                 }
             }
