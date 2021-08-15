@@ -1,7 +1,6 @@
 package game;
 
 import java.util.Objects;
-import  java.lang.Math;
 
 public class Game {
     static String player1Name;
@@ -18,10 +17,7 @@ public class Game {
         UI.printStatement("Welcome in the Polish draughts!");
         player1Name = Player.getPlayerName("first ");
         player2Name = Player.getPlayerName("second ");
-
-//        String startStatement = UI.stringBuilder("You start, . Your pawns are white!", player1Name, 10);
         boardSize = Board.getBoardSize();
-//        UI.printStatement(startStatement);
         UI.printStatement("The Pawns of " + player1Name+ " are white, and the Pawns of " +player2Name+ " are black.");
         UI.printStatement(" ");
     }
@@ -35,7 +31,6 @@ public class Game {
             nextMovePlayer = player2Name;
         }
         if (winnerName.isBlank()){
-//            UI.printStatement("Your move " + nextMovePlayer);
             return nextMovePlayer;
         } else {
             return winnerName;
@@ -97,6 +92,66 @@ public class Game {
             System.out.println("You wanted to move too far!");
             return false;
     }
+    }
+
+
+    public static Boolean checkBoundaries(int rowOrCol ){
+        return 0 <= rowOrCol && rowOrCol < boardSize;
+    }
+
+    public static Boolean downMultiplyMoves(Object board, int downRow, int downCol, int doubleDownRow, int doubleDownCol){
+        // next down move not null
+        if (checkBoundaries(downRow) && checkBoundaries(downCol)) {
+            if (((Board) board).getFields()[downRow][downCol] != null){
+                // next down move is enemy
+                if (!((Board) board).getFields()[downRow][downCol].IS_WHITE) {
+                    // next down two move is empty
+                    if (checkBoundaries(doubleDownRow) && checkBoundaries(doubleDownCol)) {
+                        return ((Board) board).getFields()[doubleDownRow][doubleDownCol] == null;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static Boolean upMultiplyMoves(Object board, int upRow, int upCol, int doubleUpRow, int doubleUpCol){
+        // next up move not null
+        if (checkBoundaries(upRow) && checkBoundaries(upCol)) {
+            if (((Board) board).getFields()[upRow][upCol] != null) {
+                // next up move is enemy
+                if (((Board) board).getFields()[upRow][upCol].IS_WHITE) {
+                    // next up two move is empty
+                    if (checkBoundaries(doubleUpRow) && checkBoundaries(doubleUpCol)) {
+                        return ((Board) board).getFields()[doubleUpRow][doubleUpCol] == null;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public static Boolean checkIfMultiplyMoves(Object board, int row, int col, Boolean isWhite){
+        // White move
+        if (isWhite){
+            // left down diagonal move
+            if (downMultiplyMoves(board, row, (col-2), (row+1), (col-3))){ return true; }
+            // right down diagonal move
+            if (downMultiplyMoves(board, row, col, (row+1), (col+1))) { return true; }
+            // next left and right down move is empty or own pawns
+            return false;
+        }
+
+        // Black move
+        else {
+            // left up diagonal move
+            if (upMultiplyMoves(board, (row-2), (col-2), (row-3), (col-3))) { return true; }
+            // right up diagonal move
+            if (upMultiplyMoves(board, (row-2), col, (row-3), (col+1))) { return true; }
+            // next left and right up move is empty or own pawns
+            return false;
+        }
     }
 
     public static void checkForWinner(){
