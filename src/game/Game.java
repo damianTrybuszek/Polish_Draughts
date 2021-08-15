@@ -22,7 +22,7 @@ public class Game {
 //        String startStatement = UI.stringBuilder("You start, . Your pawns are white!", player1Name, 10);
         boardSize = Board.getBoardSize();
 //        UI.printStatement(startStatement);
-        UI.printStatement("The Pawns of " + player1Name+ " are white, and the Pawns of " +player2Name+ " are black.");
+        UI.printStatement("The Pawns of " + player1Name + " are white, and the Pawns of " + player2Name + " are black.");
         UI.printStatement(" ");
     }
 
@@ -42,7 +42,7 @@ public class Game {
         }
     }
 
-    public static Boolean tryToMakeMove(Object board, int row, int col, Boolean startingPosition, String player) {
+    public static Boolean tryToMakeMove(Object board, int row, int col, Boolean startingPosition, String player, int newRow, int newCol) {
         /*
         This method checks if the starting position from user input is a valid pawn and if the ending
         position is within board boundaries
@@ -53,26 +53,42 @@ public class Game {
             return false;
 
         }
-        else if((row + col) % 2 != 0){
+        else if((newRow + newCol) % 2 != 0){
+            //check if we try to go on the black field
             System.out.println("You tried to move onto White Field! You can only move on the Black ones");
             return false;
         }
         else {
             if (!startingPosition) {
-                if (((Board) board).getFields()[row-1][col-1] == null){
-                return true;}
-                else if ((((Board) board).getFields()[row-1][col-1].IS_WHITE != IS_WHITE)){
-                    return true;
+                Boolean notToFar = checkIfNotTooFar(row, col, newRow, newCol);
+                if (notToFar) {
+                    if (((Board) board).getFields()[newRow - 1][newCol - 1] == null) {
+                        //check if the field is empty
+                        return true;
+                    } else if ((((Board) board).getFields()[newRow - 1][newCol - 1].IS_WHITE != IS_WHITE)) {
+                        //check if the opponent Pawn is placed on  the field we chose
+                        int rowDiff = newRow - row;
+                        int colDiff = newCol - col;
+                        if ((((Board) board).getFields()[newRow - 1 + rowDiff][newCol - 1 + colDiff] == null)) {
+                            //check if the field behind the pawn is empty
+                            return true;
+                        }
+                        else {
+                            System.out.println("You can not beat!");
+                            return false;
+                        }
+                    } else if ((((Board) board).getFields()[newRow - 1][newCol - 1].IS_WHITE == IS_WHITE)) {
+                        System.out.println("You tried to move to the place, where is your pawn!");
+                        return false;
+                    } else {
+                        return false;
+                    }
                 }
-                else if ((((Board) board).getFields()[row-1][col-1].IS_WHITE == IS_WHITE)){
-                    System.out.println("You tried to move to the place, where is your pawn!");
-                    return false;
-                }
-                else{
+                else {
                     return false;
                 }
             }
-             else {
+            else {
                 if (((Board) board).getFields()[row-1][col-1] == null) {
                     System.out.println("The are no pawn!");
                     return false;
@@ -86,9 +102,11 @@ public class Game {
                 }
             }
         }
+
     }
 
     public static Boolean checkIfNotTooFar(int row, int col, int newRow, int newCol){
+        //the method checks, if the place which we chose is not too far
         if(Math.abs(row - newRow) == 0 || Math.abs(row - newRow) == 1 && Math.abs(col - newCol) == 0 || Math.abs(col - newCol) == 1){
             return true;
         }
@@ -96,8 +114,10 @@ public class Game {
         {
             System.out.println("You wanted to move too far!");
             return false;
+        }
     }
-    }
+
+
 
     public static void checkForWinner(){
     }

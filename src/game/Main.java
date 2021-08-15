@@ -28,16 +28,15 @@ public class Main {
             int row = scanner.nextInt();
             System.out.println("Provide a number of column of the Pawn, You want to move: ");
             int col = scanner.nextInt();
-            Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, actualMovePlayer);
-            if (decisionToStart){
+            Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, actualMovePlayer, 0, 0);
+            if (decisionToStart) {
                 System.out.println("Provide a number of row, that you want to move on: ");
                 int newRow = scanner.nextInt();
                 System.out.println("Provide a number of column that you want to move on: ");
                 int newCol = scanner.nextInt();
-                Boolean decisionToMove = Game.tryToMakeMove(board, newRow, newCol, false, actualMovePlayer);
-                Boolean ifNotToFar = Game.checkIfNotTooFar(row, col, newRow, newCol);
-                if (decisionToMove && ifNotToFar){
-                    boolean isWhite = board.getFields()[row-1][col-1].IS_WHITE;
+                Boolean decisionToMove = Game.tryToMakeMove(board, row, col, false, actualMovePlayer, newRow, newCol);
+                if (decisionToMove) {
+                    boolean isWhite = board.getFields()[row - 1][col - 1].IS_WHITE;
                     board.movePawn(row, col, newRow, newCol, isWhite);
                     correctMoveCounter++;
                 }
@@ -46,26 +45,5 @@ public class Main {
         } while (correctMoveCounter < 10);
 
 
-//        if (board.getFields()[2][0] != null) {
-//            System.out.println(board.getFields()[2][0].getCoordinates());
-//        }
-
-//        testTryToMakeMove(board);
     }
-
-//    public static void testTryToMakeMove(Object board){
-//        int correctMoveCounter = 0;
-//        Scanner scanner = new Scanner(System.in);
-//        do {
-//            System.out.println("Provide a number of row: ");
-//            int row = scanner.nextInt();
-//            System.out.println("Provide a number of column: ");
-//            int col = scanner.nextInt();
-//            String actualMovePlayer = game.playRound(correctMoveCounter);
-//            Boolean decisionToStart = game.tryToMakeMove(board, row, col, true, actualMovePlayer);
-//            System.out.println(decisionToStart);
-//            System.out.println(board);
-//            correctMoveCounter++;
-//        } while (correctMoveCounter < 10);
-//    }
 }
