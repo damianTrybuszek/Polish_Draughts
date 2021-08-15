@@ -8,6 +8,7 @@ public class Pawn {
     public int coordinateI = -1;
     public int coordinateJ = -1;
 
+
     public Pawn(boolean isWhite, boolean isQueen, int coordinateI, int coordinateJ) {
         this.IS_WHITE = isWhite;
         this.IS_QUEEN = isQueen;
@@ -27,11 +28,18 @@ public class Pawn {
         return IS_QUEEN;
     }
 
+    public int getCoordinateI(){return coordinateI;}
+
+    public int getCoordinateJ() {
+        return coordinateJ;
+    }
+
     public HashMap<String, Integer> getCoordinates() {
         HashMap<String, Integer> coordinates = new HashMap<>();
         coordinates.put("coordinateI", this.coordinateI);
         coordinates.put("coordinateJ", this.coordinateJ);
         return coordinates;
     }
+
 
 }

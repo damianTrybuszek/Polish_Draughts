@@ -134,16 +134,20 @@ public class Board {
     }
 
     public void movePawn(int row, int col, int newRow, int newCol, boolean isWhite) {
+        //delete the current pawn
         removePawn(row, col);
         int rowDiff = newRow - row;
         int colDiff = newCol - col;
         if(FIELDS[newRow-1][newCol-1] == null) {
+            //if there is no Pawn on the place where we want to move the pawn moves
             if (isWhite) {
                 FIELDS[newRow - 1][newCol - 1] = new Pawn(true, false, newRow, newCol);
             } else {
                 FIELDS[newRow - 1][newCol - 1] = new Pawn(false, false, newRow, newCol);
             }}
         else if((FIELDS[newRow-1][newCol-1]).IS_WHITE!= isWhite){
+            //if there is opponent Pawn on the place where we want to move the pawn beat it (delete) and move one position more
+
             removePawn(newRow, newCol);
             if (isWhite) {
                 FIELDS[newRow - 1 + rowDiff][newCol - 1 + colDiff] = new Pawn(true, false, newRow, newCol);
