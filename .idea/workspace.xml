@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d30a5d0c-26a6-4fa0-b82d-7f95825a46c3" name="Changes" comment="Multiply move completed">
+      <change beforePath="$PROJECT_DIR$/src/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Pawn.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Michal" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8692e6c7-2ef4-4933-8298-502c902fdecb" />
+        <option name="url" value="https://github.com/damianTrybuszek/Polish_Draughts.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectId" id="1wRvzvUHYrSGJFq4whILWNRIFA9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.13927579" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Main" />
+      <module name="Polish_Draughts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d30a5d0c-26a6-4fa0-b82d-7f95825a46c3" name="Changes" comment="" />
+      <created>1628434484279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628434484279</updated>
+      <workItem from="1628434486161" duration="12000" />
+      <workItem from="1628507707360" duration="132000" />
+      <workItem from="1628509239918" duration="411000" />
+      <workItem from="1628603605179" duration="524000" />
+      <workItem from="1628604285383" duration="1973000" />
+      <workItem from="1628607433530" duration="1404000" />
+      <workItem from="1628609046890" duration="969000" />
+      <workItem from="1628611912173" duration="80000" />
+      <workItem from="1628615961542" duration="2911000" />
+      <workItem from="1628679259566" duration="20753000" />
+      <workItem from="1628771027237" duration="12755000" />
+      <workItem from="1628858583388" duration="5962000" />
+      <workItem from="1628930162643" duration="8586000" />
+      <workItem from="1629017706783" duration="19274000" />
+      <workItem from="1629116041345" duration="10196000" />
+    </task>
+    <task id="LOCAL-00001" summary="After Michal merging">
+      <created>1628606311876</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1628606311876</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Get board size fixed, board modified with rows and columns names">
+      <created>1628772610058</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628772610058</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Get board size fixed, board modified with rows and columns names">
+      <created>1628772797757</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628772797757</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Get players names with input validation">
+      <created>1628783302171</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628783302171</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Get board size in start method">
+      <created>1628786342447</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628786342447</updated>
+    </task>
+    <task id="LOCAL-00006" summary="After main merging">
+      <created>1628859867173</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628859867173</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Start method fixed">
+      <created>1628862228336</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1628862228336</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Player round added">
+      <created>1628866680278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1628866680278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Try to make move added">
+      <created>1628938634359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1628938634360</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Multiply move start">
+      <created>1629032167838</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1629032167838</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Multiply move. Coordinates of actual pawn modified">
+      <created>1629037549298</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629037549298</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Multiply move completed">
+      <created>1629124787277</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1629124787277</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="After Michal merging" />
+    <MESSAGE value="Get board size fixed, board modified with rows and columns names" />
+    <MESSAGE value="Get players names with input validation" />
+    <MESSAGE value="Get board size in start method" />
+    <MESSAGE value="After main merging" />
+    <MESSAGE value="Start method fixed" />
+    <MESSAGE value="Player round added" />
+    <MESSAGE value="Try to make move added" />
+    <MESSAGE value="Multiply move start" />
+    <MESSAGE value="Multiply move. Coordinates of actual pawn modified" />
+    <MESSAGE value="Multiply move completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiply move completed" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/game/Board.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="Math.abs(row - newRow) == 0" language="JAVA" />
+        <watch expression="Math.abs(row - newRow) == 1" language="JAVA" />
+        <watch expression="Math.abs(col - newCol) == 0" language="JAVA" />
+        <watch expression="Math.abs(col - newCol) == 1" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
