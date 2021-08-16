@@ -30,9 +30,9 @@ public class UI {
 //        catch (Exception e) {
 //            System.out.println("Dupa wyszła");
 //        }
-        System.out.println("Everything on the console will cleared");
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+//        System.out.println("Everything on the console will cleared");
+//        System.out.print("\033[H\033[2J");
+//        System.out.flush();
     }
 
     public static String stringBuilder(String stringToChange, String stringToInsert, int offset) {

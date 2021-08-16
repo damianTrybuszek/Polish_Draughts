@@ -2,7 +2,6 @@ package game;
 
 //import static game.UI.getBoardSize;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -38,12 +37,15 @@ public class Main {
                 if (decisionToMove) {
                     boolean isWhite = board.getFields()[row - 1][col - 1].IS_WHITE;
                     board.movePawn(row, col, newRow, newCol, isWhite);
+                    System.out.println(board);
+                    while (Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite)){
+                        board.multiplyMovePawn(board, actualMovePlayer, isWhite);
+                    }
                     correctMoveCounter++;
                 }
             }
             System.out.println(board);
-        } while (correctMoveCounter < 10);
-
+        } while (correctMoveCounter < 40);
 
     }
 }
