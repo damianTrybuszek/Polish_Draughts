@@ -154,4 +154,26 @@ public class Board {
         }
 
     }
+
+    public void multiplyMovePawn(Object board, String player, int actualRow, int actualCol, boolean isWhite) {
+        UI.printStatement(player + ", You can make another pawn move");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Provide a number of row of the Pawn, You want to move: ");
+        int row = scanner.nextInt();
+        System.out.println("Provide a number of column of the Pawn, You want to move: ");
+        int col = scanner.nextInt();
+        Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, player);
+        if (decisionToStart){
+            System.out.println("Provide a number of row, that you want to move on: ");
+            int newRow = scanner.nextInt();
+            System.out.println("Provide a number of column that you want to move on: ");
+            int newCol = scanner.nextInt();
+            Boolean decisionToMove = Game.tryToMakeMove(board, newRow, newCol, false, player);
+            Boolean ifNotToFar = Game.checkIfNotTooFar(row, col, newRow, newCol);
+            if (decisionToMove && ifNotToFar){
+                movePawn(row, col, newRow, newCol, isWhite);
+                System.out.println(board);
+            }
+        }
+    }
 }

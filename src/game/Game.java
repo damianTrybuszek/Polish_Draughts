@@ -136,7 +136,7 @@ public class Game {
         coordinates[0] = enemyRow;
         coordinates[1] = enemyCol;
         if (checkBoundaries(enemyRow) && checkBoundaries(enemyCol)) {
-            if (((Board) board).getFields()[enemyRow][enemyCol] != null) {
+            if (((Board) board).getFields()[enemyRow-1][enemyCol-1] == null) {
                 if (isWhite) {
                     coordinates[0] = enemyRow + 1;
                 } else {

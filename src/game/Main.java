@@ -39,13 +39,14 @@ public class Main {
                     boolean isWhite = board.getFields()[row-1][col-1].IS_WHITE;
                     board.movePawn(row, col, newRow, newCol, isWhite);
                     System.out.println(board);
-                    // while Game.checkIfMultiplyMoves(board, newRow, newCol, isWhite); { move }
-                    Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite);
+                    while (Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite)){
+                        board.multiplyMovePawn(board, actualMovePlayer, (newRow-1), (newCol-1), isWhite);
+                    }
                     correctMoveCounter++;
                 }
             }
             System.out.println(board);
-        } while (correctMoveCounter < 10);
+        } while (correctMoveCounter < 40);
 
     }
 }
