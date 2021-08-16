@@ -134,16 +134,20 @@ public class Board {
     }
 
     public void movePawn(int row, int col, int newRow, int newCol, boolean isWhite) {
+        //delete the current pawn
         removePawn(row, col);
         int rowDiff = newRow - row;
         int colDiff = newCol - col;
         if(FIELDS[newRow-1][newCol-1] == null) {
+            //if there is no Pawn on the place where we want to move the pawn moves
             if (isWhite) {
                 FIELDS[newRow - 1][newCol - 1] = new Pawn(true, false, newRow, newCol);
             } else {
                 FIELDS[newRow - 1][newCol - 1] = new Pawn(false, false, newRow, newCol);
             }}
         else if((FIELDS[newRow-1][newCol-1]).IS_WHITE!= isWhite){
+            //if there is opponent Pawn on the place where we want to move the pawn beat it (delete) and move one position more
+
             removePawn(newRow, newCol);
             if (isWhite) {
                 FIELDS[newRow - 1 + rowDiff][newCol - 1 + colDiff] = new Pawn(true, false, newRow, newCol);
@@ -155,20 +159,20 @@ public class Board {
 
     }
 
-    public void multiplyMovePawn(Object board, String player, int actualRow, int actualCol, boolean isWhite) {
+    public void multiplyMovePawn(Object board, String player, boolean isWhite) {
         UI.printStatement(player + ", You can make another pawn move");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Provide a number of row of the Pawn, You want to move: ");
         int row = scanner.nextInt();
         System.out.println("Provide a number of column of the Pawn, You want to move: ");
         int col = scanner.nextInt();
-        Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, player);
+        Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, player, 0, 0);
         if (decisionToStart){
             System.out.println("Provide a number of row, that you want to move on: ");
             int newRow = scanner.nextInt();
             System.out.println("Provide a number of column that you want to move on: ");
             int newCol = scanner.nextInt();
-            Boolean decisionToMove = Game.tryToMakeMove(board, newRow, newCol, false, player);
+            Boolean decisionToMove = Game.tryToMakeMove(board, row, col, false, player, newRow, newCol);
             Boolean ifNotToFar = Game.checkIfNotTooFar(row, col, newRow, newCol);
             if (decisionToMove && ifNotToFar){
                 movePawn(row, col, newRow, newCol, isWhite);

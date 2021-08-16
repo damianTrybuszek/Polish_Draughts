@@ -27,20 +27,19 @@ public class Main {
             int row = scanner.nextInt();
             System.out.println("Provide a number of column of the Pawn, You want to move: ");
             int col = scanner.nextInt();
-            Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, actualMovePlayer);
-            if (decisionToStart){
+            Boolean decisionToStart = Game.tryToMakeMove(board, row, col, true, actualMovePlayer, 0, 0);
+            if (decisionToStart) {
                 System.out.println("Provide a number of row, that you want to move on: ");
                 int newRow = scanner.nextInt();
                 System.out.println("Provide a number of column that you want to move on: ");
                 int newCol = scanner.nextInt();
-                Boolean decisionToMove = Game.tryToMakeMove(board, newRow, newCol, false, actualMovePlayer);
-                Boolean ifNotToFar = Game.checkIfNotTooFar(row, col, newRow, newCol);
-                if (decisionToMove && ifNotToFar){
-                    boolean isWhite = board.getFields()[row-1][col-1].IS_WHITE;
+                Boolean decisionToMove = Game.tryToMakeMove(board, row, col, false, actualMovePlayer, newRow, newCol);
+                if (decisionToMove) {
+                    boolean isWhite = board.getFields()[row - 1][col - 1].IS_WHITE;
                     board.movePawn(row, col, newRow, newCol, isWhite);
                     System.out.println(board);
                     while (Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite)){
-                        board.multiplyMovePawn(board, actualMovePlayer, (newRow-1), (newCol-1), isWhite);
+                        board.multiplyMovePawn(board, actualMovePlayer, isWhite);
                     }
                     correctMoveCounter++;
                 }
