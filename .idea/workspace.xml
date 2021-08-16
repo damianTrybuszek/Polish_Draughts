@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d30a5d0c-26a6-4fa0-b82d-7f95825a46c3" name="Changes" comment="Multiply move completed with Damian merge" />
+    <list default="true" id="d30a5d0c-26a6-4fa0-b82d-7f95825a46c3" name="Changes" comment="Misc.xml modified">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629124787277</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Misc.xml modified">
+      <created>1629127082402</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1629127082402</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +218,8 @@
     <MESSAGE value="Multiply move start" />
     <MESSAGE value="Multiply move. Coordinates of actual pawn modified" />
     <MESSAGE value="Multiply move completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Multiply move completed" />
+    <MESSAGE value="Misc.xml modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Misc.xml modified" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
