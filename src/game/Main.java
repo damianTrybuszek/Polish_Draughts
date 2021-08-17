@@ -19,6 +19,7 @@ public class Main {
 
         System.out.println(board);
         int correctMoveCounter = 0;
+        boolean fightStatus = false;
         Scanner scanner = new Scanner(System.in);
         do {
             String actualMovePlayer = Game.playRound(correctMoveCounter);
@@ -35,17 +36,22 @@ public class Main {
                 int newCol = scanner.nextInt();
                 Boolean decisionToMove = Game.tryToMakeMove(board, row, col, false, actualMovePlayer, newRow, newCol);
                 if (decisionToMove) {
+                    if (board.getFields()[newRow - 1][newCol - 1] != null) {
+                        fightStatus = true;
+                    }
                     boolean isWhite = board.getFields()[row - 1][col - 1].IS_WHITE;
                     board.movePawn(row, col, newRow, newCol, isWhite);
-                    System.out.println(board);
-                    while (Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite)){
-                        board.multiplyMovePawn(board, actualMovePlayer, isWhite);
+                    if (fightStatus) {
+                        System.out.println(board);
+                        while (Game.checkIfMultiplyMoves(board, col, newRow, newCol, isWhite)){
+                            board.multiplyMovePawn(board, actualMovePlayer, isWhite);
+                        }
                     }
+                    fightStatus = false;
                     correctMoveCounter++;
                 }
             }
             System.out.println(board);
         } while (correctMoveCounter < 40);
-
     }
 }
