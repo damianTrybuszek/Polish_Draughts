@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Scanner;
+
 public class UI {
 
     public static void printStatement(String statement) {
@@ -39,5 +41,22 @@ public class UI {
         StringBuilder statement = new StringBuilder(stringToChange);
         statement.insert(offset, stringToInsert);
         return statement.toString();
+    }
+
+    public static int[] pawnToMoveCoordinates(int option){
+        String endOfSentence;
+        int[] coordinates = new int[2];
+        Scanner scanner = new Scanner(System.in);
+        switch (option){
+            case 1: endOfSentence = " of the Pawn, You want to move: "; break;
+            case 2: endOfSentence = ", that you want to move on: "; break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + option);
+        }
+        System.out.println("Provide a number of row" + endOfSentence);
+        coordinates[0] = scanner.nextInt();
+        System.out.println("Provide a number of column" + endOfSentence);
+        coordinates[1] = scanner.nextInt();
+        return coordinates;
     }
 }
