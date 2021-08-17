@@ -199,12 +199,14 @@ public class Game {
     public static void checkForWinner(Object board){
         int whitePawnsCounter = 0;
         int blackPawnsCounter = 0;
-        for (int i = 0; i < boardSize / 2 - 1; i++) {
+        for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
-                if (((Board) board).getFields()[i][j].IS_WHITE) {
-                    whitePawnsCounter++;
-                } else if (!((Board) board).getFields()[i][j].IS_WHITE) {
-                    blackPawnsCounter++;
+                if (((Board) board).getFields()[i][j] != null) {
+                    if (((Board) board).getFields()[i][j].IS_WHITE) {
+                        whitePawnsCounter++;
+                    } else if (!((Board) board).getFields()[i][j].IS_WHITE) {
+                        blackPawnsCounter++;
+                    }
                 }
             }
         }
