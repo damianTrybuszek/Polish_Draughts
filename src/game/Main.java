@@ -35,9 +35,11 @@ public class Main {
                     }
                     fightStatus = false;
                     correctMoveCounter++;
+                    Game.checkForWinner(board);
                 }
             }
             System.out.println(board);
         } while (Game.winnerName.isBlank());
+        UI.printAnotherStatement(Game.winnerName + ", congratulation! You won!");
     }
 }
