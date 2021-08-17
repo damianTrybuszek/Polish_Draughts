@@ -196,9 +196,22 @@ public class Game {
         }
     }
 
-
-
-    public static void checkForWinner(){
+    public static void checkForWinner(Object board){
+        int whitePawnsCounter = 0;
+        int blackPawnsCounter = 0;
+        for (int i = 0; i < boardSize / 2 - 1; i++) {
+            for (int j = 0; j < boardSize; j++) {
+                if (((Board) board).getFields()[i][j].IS_WHITE) {
+                    whitePawnsCounter++;
+                } else if (!((Board) board).getFields()[i][j].IS_WHITE) {
+                    blackPawnsCounter++;
+                }
+            }
+        }
+        if (whitePawnsCounter == 0) {
+            winnerName = player2Name;
+        } else if (blackPawnsCounter == 0) {
+            winnerName = player1Name;
+        }
     }
-
 }
